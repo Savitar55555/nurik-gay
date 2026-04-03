@@ -1,0 +1,20 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Установка Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
